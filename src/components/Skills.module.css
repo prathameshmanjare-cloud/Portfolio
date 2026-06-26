@@ -1,0 +1,113 @@
+.section { background: var(--surface2); }
+
+.titleWrap { margin-bottom: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Glossy dark code-window card (matches hero terminal) */
+.column {
+  background: #1A1625;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(24, 18, 31, 0.18), var(--glow-violet);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.column:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px rgba(24, 18, 31, 0.22), 0 0 36px rgba(109, 40, 217, 0.35);
+}
+
+.termBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #221C30;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dot { width: 11px; height: 11px; border-radius: 50%; }
+.red { background: #FF5F56; }
+.yellow { background: #FFBD2E; }
+.green { background: #27C93F; }
+
+.termTitle {
+  margin-left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(240, 240, 245, 0.5);
+}
+
+.colBody { padding: 28px 26px 32px; }
+
+.colTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  margin-bottom: 26px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.colTitle::before {
+  content: '// ';
+  color: rgba(240, 240, 245, 0.35);
+}
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skillItem { display: flex; flex-direction: column; gap: 8px; }
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillName {
+  font-size: 0.86rem;
+  color: #E4E0EC;
+  font-weight: 500;
+}
+
+.skillPct {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+}
+
+.track {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent-violet), var(--accent-cyan));
+  box-shadow: 0 0 10px rgba(8, 145, 178, 0.5);
+  transition: box-shadow 0.2s ease;
+}
+
+.skillItem:hover .bar {
+  box-shadow: 0 0 18px rgba(0, 245, 255, 0.8);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
